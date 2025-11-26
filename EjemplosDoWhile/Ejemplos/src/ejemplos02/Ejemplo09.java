@@ -25,7 +25,7 @@ public class Ejemplo09 {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         entrada.useLocale(Locale.US);
-        
+
         String cadenaFinal;
         int nota;
         int salida;
@@ -34,34 +34,32 @@ public class Ejemplo09 {
         boolean bandera = true;
         int suma = 0;
         int contador_calificaciones = 0;
-        
         cadenaFinal = "Listado de Notas\n";
-        
+
         do {
-            
-            
-            // agrego valor al acumulador
+            System.out.println("Ingrese el nombre del estudiante");
+            nombre = entrada.nextLine();
+            System.out.println("Ingrese la nota");
+            nota = entrada.nextInt();
             suma = suma + nota;
-            // agrego una unidad al contador para luego sacar el promedio
             contador_calificaciones = contador_calificaciones + 1;
-            
-            
+            if (nota>=5){
+                cadenaFinal = String.format("%sCalificacion %s(Muy buena) del"
+                        + " estudiante %s\n",cadenaFinal, nota, nombre);
+            }else{
+                cadenaFinal = String.format("%sCalificacion %s(buena) del"
+                        + " estudiante %s\n",cadenaFinal, nota, nombre);
+            }
             System.out.println("Ingrese (-111) si desea salir del ciclo; "
                     + "cualquier otro número para continuar");
             salida = entrada.nextInt();
-
             if (salida == -111) {
                 bandera = false;
             }
-            // atención
-            entrada.nextLine(); // se limpia el buffer, pues el primer valor
-                               // que se solicita al inicio del ciclo es una
-                               // cadena
-
-        } while (bandera); // (bandera==true)
-        
-        // promedio = suma / contador_calificaciones;
-        promedio = (double)suma / contador_calificaciones;
+            entrada.nextLine(); 
+            
+        } while (bandera); 
+        promedio = (double) suma / contador_calificaciones;
         cadenaFinal = String.format("%s\nPromedio de calificaciones: %.2f",
                 cadenaFinal,
                 promedio);
