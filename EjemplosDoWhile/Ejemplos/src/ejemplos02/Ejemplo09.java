@@ -32,7 +32,7 @@ public class Ejemplo09 {
         String nombre; // *
         double promedio;
         boolean bandera = true;
-        int suma = 0;
+        double suma = 0;
         int contador_calificaciones = 0;
         cadenaFinal = "Listado de Notas\n";
 
