@@ -31,8 +31,8 @@ public class Ejemplo01 {
             suma = suma + contador;
             mensaje = String.format("%s%s\n", mensaje, contador);
             contador = contador + 1;
-        } while (contador <=10);
-        mensaje = String.format("%sLa suma de los numeros es: %s\n",mensaje, suma);
+        } while (contador <= 10);
+        mensaje = String.format("%sLa suma de los numeros es: %s\n", mensaje, suma);
         System.out.printf("%s\n", mensaje);
     }
 
